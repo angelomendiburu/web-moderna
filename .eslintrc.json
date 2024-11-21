@@ -1,16 +1,3 @@
-# Web Moderna
-
-## Autor
-- **Nombre completo:** Angel Omendiburu
-- **Nombre del curso:** Desarrollo Web Moderna
-- **Email:** angelomendiburu@gmail.com
-- **Fecha de  creacion del proyecto:** 20 de noviembre de 2024
-
-## Sobre el proyecto
-En “La Web Moderna” podrás leer los conceptos clave que todo Desarrollador de Software debe saber para crear aplicaciones web.
-
-## eslintrc
-
 {
     // Define el entorno donde se ejecutará el código
     "env": {
@@ -38,5 +25,3 @@ En “La Web Moderna” podrás leer los conceptos clave que todo Desarrollador 
     }
   }
   
-## Despliegue
-- ^[Ver sitiio web](https://angelomendiburu.github.io/web-moderna/)
