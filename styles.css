@@ -1,15 +1,15 @@
-/* Selector universal */
+/* Selector universal: Reinicia márgenes y paddings por defecto y ajusta el box-sizing */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Estilo del cuerpo */
+/* Estilo del cuerpo: Define la fuente principal y los colores globales */
 body {
   font-family: 'Segoe UI', system-ui, sans-serif;
-  background-color: #f5f5f5;
-  color: #333;
+  background-color: #333333; /* Fondo gris oscuro */
+  color: #333; /* Texto en gris oscuro */
   line-height: 1.6;
 }
 
@@ -23,7 +23,15 @@ header {
 
 /* Estilo de la navegación */
 nav {
-  margin: 15px 0;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #0078d7;
+  padding: 10px 0;
+  z-index: 1000;
 }
 
 nav a {
@@ -32,19 +40,23 @@ nav a {
   background-color: #005bb5;
   padding: 8px 15px;
   border-radius: 5px;
-  display: inline-block;
-  margin: 0 10px;
   font-size: 1rem;
+  text-align: center;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 nav a:hover {
   background-color: #003f8c;
+  color: #f0f0f0;
 }
 
 /* Estilo principal */
 main {
-  padding: 20px;
-  text-align: center;
+  padding: 80px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 }
 
 main h1 {
@@ -57,6 +69,44 @@ main p {
   color: #555;
 }
 
+/* Estilo de las secciones */
+section {
+  background-color: white;
+  padding: 20px;
+  width: 80%;
+  max-width: 800px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  text-align: left;
+}
+
+section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+section p {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+section a {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  background-color: #0078d7;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+section a:hover {
+  background-color: #1e21ec;
+  color: #e0e0e0;
+}
+
 /* Estilo del pie de página */
 footer {
   background-color: #0078d7;
@@ -64,4 +114,61 @@ footer {
   text-align: center;
   padding: 10px 0;
   margin-top: 20px;
+}
+
+/* Media Queries: Adaptaciones según tamaño del dispositivo */
+
+/* Pantallas pequeñas (máximo 600px) */
+@media (max-width: 600px) {
+  body {
+    background-color: #222; /* Fondo más oscuro */
+    color: #7a7a7a; /* Texto más claro */
+  }
+
+  nav {
+    position: fixed;
+    bottom: 0;
+    top: unset;
+    flex-direction: row;
+    gap: 5px;
+    padding: 10px 0;
+  }
+
+  nav a {
+    padding: 6px 10px;
+    font-size: 0.9rem;
+  }
+
+  main {
+    padding: 20px 10px;
+  }
+
+  section {
+    width: 100%;
+    padding: 15px;
+  }
+}
+
+/* Pantallas medianas (entre 601px y 1024px) */
+@media (min-width: 601px) and (max-width: 1024px) {
+  body {
+    background-color: #585858; /* Fondo gris medio */
+    color: rgb(0, 0, 0); /* Texto blanco */
+  }
+
+  nav {
+    background-color: #003f8c; /* Fondo más oscuro */
+  }
+}
+
+/* Pantallas grandes (mínimo 1025px) */
+@media (min-width: 1025px) {
+  body {
+    background-color: #3a7f88; /* Fondo claro */
+    color: #1b1b1b; /* Texto oscuro */
+  }
+
+  nav {
+    background-color: #005bb5;
+  }
 }
