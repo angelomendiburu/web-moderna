@@ -5,12 +5,14 @@
   box-sizing: border-box;
 }
 
-/* Estilo del cuerpo: Define la fuente principal y los colores globales */
+/* Estilo del cuerpo: Define la fuente principal, los colores globales y habilita el scroll */
 body {
   font-family: 'Segoe UI', system-ui, sans-serif;
   background-color: #333333; /* Fondo gris oscuro */
   color: #333; /* Texto en gris oscuro */
   line-height: 1.6;
+  overflow-y: auto; /* Asegura que el scroll vertical siempre esté habilitado */
+  scroll-behavior: smooth; /* Movimiento suave al hacer scroll */
 }
 
 /* Estilo del encabezado */
@@ -78,21 +80,17 @@ section {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   text-align: left;
+  display: flex; /* Habilita flexbox para los hijos */
+  flex-direction: column; /* Organiza los hijos en columna */
+  gap: 15px; /* Espaciado entre elementos */
+
+  /* Habilitar scroll interno */
+  max-height: 300px; /* Altura máxima para la sección */
+  overflow-y: auto; /* Scroll vertical cuando el contenido exceda la altura */
 }
 
-section h2 {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-}
-
-section p {
-  font-size: 1rem;
-  color: #333;
-  margin-bottom: 10px;
-}
-
+/* Centrar el botón dentro de la sección */
 section a {
-  display: inline-block;
   text-decoration: none;
   color: white;
   background-color: #0078d7;
@@ -100,11 +98,30 @@ section a {
   border-radius: 5px;
   font-size: 1rem;
   transition: background-color 0.3s, color 0.3s;
+  align-self: center; /* Centrar horizontalmente */
 }
 
 section a:hover {
   background-color: #1e21ec;
   color: #e0e0e0;
+}
+
+/* Personalizar scrollbars (solo para navegadores basados en WebKit) */
+section::-webkit-scrollbar {
+  width: 10px; /* Ancho del scroll */
+}
+
+section::-webkit-scrollbar-thumb {
+  background-color: #0078d7; /* Color de la barra */
+  border-radius: 5px; /* Bordes redondeados */
+}
+
+section::-webkit-scrollbar-thumb:hover {
+  background-color: #005bb5; /* Color al pasar el mouse */
+}
+
+section::-webkit-scrollbar-track {
+  background-color: #f0f0f0; /* Fondo del track */
 }
 
 /* Estilo del pie de página */
@@ -122,7 +139,8 @@ footer {
 @media (max-width: 600px) {
   body {
     background-color: #222; /* Fondo más oscuro */
-    color: #7a7a7a; /* Texto más claro */
+    color: #aaaaaa; /* Texto más claro */
+    font-size: 2rem;
   }
 
   nav {
@@ -152,23 +170,23 @@ footer {
 /* Pantallas medianas (entre 601px y 1024px) */
 @media (min-width: 601px) and (max-width: 1024px) {
   body {
-    background-color: #585858; /* Fondo gris medio */
+    background-color: #6e66e0; /* Fondo gris medio */
     color: rgb(0, 0, 0); /* Texto blanco */
   }
 
   nav {
-    background-color: #003f8c; /* Fondo más oscuro */
+    background-color: #4e43b1; /* Fondo más oscuro */
   }
 }
 
 /* Pantallas grandes (mínimo 1025px) */
 @media (min-width: 1025px) {
   body {
-    background-color: #3a7f88; /* Fondo claro */
+    background-color: #34afd4; /* Fondo claro */
     color: #1b1b1b; /* Texto oscuro */
   }
 
   nav {
-    background-color: #005bb5;
+    background-color: #0565c5;
   }
 }
